@@ -58,8 +58,8 @@ def process_stream_output(chunk: dict, output: RequestFuncOutput, **kwargs):
     current_experiment_state_time = kwargs['current_experiment_state_time']
     output.generated_text += chunk["text"]
     output.output_len = chunk['meta_info']['completion_tokens']
-    output.arrival_time = chunk['meta_info']['arrival_time'] - current_experiment_state_time
-    output.append_to_queue_time = chunk['meta_info']['append_to_queue_time'] - current_experiment_state_time
+    #output.arrival_time = chunk['meta_info']['arrival_time'] - current_experiment_state_time
+    #output.append_to_queue_time = chunk['meta_info']['append_to_queue_time'] - current_experiment_state_time
 
 async def async_send_request(
     text=None, input_ids=None, payload=None, runtime_id=None, runtime_url=None, rid=None
